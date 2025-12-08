@@ -182,11 +182,11 @@
       "type": "multiple_choice",
       "options": [
         "A. It prevents users from relating CIs incorrectly",
-        "B. It automates the loading of the CIs in the dependency view",
+        "B. It automates the loading of the CIs dependency view",
         "C. Improves data quality, as the CIs will automatically be related when CMDB is activated",
         "D. Makes relating CIs easier, because predefined relationship suggests which type of CIs should be"
       ],
-      "correctAnswer":   "B. It automates the loading of the CIs in the dependency view"
+      "correctAnswer":   "B. It automates the loading of the CIs dependency view"
     },
     {
       "text": "When using the CI dependency view, how would you view the relationship between one CI and another CI?",
@@ -305,7 +305,7 @@
         "A. Banner image, Banner text, Colour scheme",
         "B. Company name, Company logo",
         "C. Banner image, Banner text",
-        "D. Company name, Company logo, Banner image, Banner text, Colour scheme"
+        "D. Company name, Company logo, Colour scheme"
       ],
       "correctAnswer": "C. Banner image, Banner text"
     },
@@ -360,29 +360,18 @@
       "type": "multiple_choice",
       "options": [
         "A. If a match is found using the coalesce fields, the existing record is updated with the information being imported",
-        "B. If a match is not found using the coalesce fields, the system creates a new record",
-        "C. If a match is found using the coalesce fields, the existing record is not updated",
+        "B. If a match is not found using the coalesce fields, the system does not create a transform map",
+        "C. If a match is found using the coalesce fields, the system creates a new record",
         "D. If a match is not found using the coalesce fields, the existing record is updated with the information being imported"
       ],
-      "correctAnswer": "C. If a match is found using the coalesce fields, the existing record is not updated"
+      "correctAnswer": "A. If a match is found using the coalesce fields, the existing record is updated with the information being imported"
     },
     {
       "text": "As it relates to ServiceNow reporting, which of the following statements describes what a metric can do?",
       "type": "multiple_choice",
       "options": [
         "A. A metric is a report gauge used on homepages to display real-time data",
-        "B. A metric is a time measurement used to report the effectiveness of flows and SLAs",
-        "C. A metric is used to measure and evaluate the effectiveness of IT service management processes",
-        "D. A metric is a comparative measurement used to report the effectiveness of flows and SLAs"
-      ],
-      "correctAnswer": "C. A metric is used to measure and evaluate the effectiveness of IT service management processes"
-    },
-    {
-      "text": "As it relates to ServiceNow reporting, which of the following statements describes what a metric can do?",
-      "type": "multiple_choice",
-      "options": [
-        "A. A metric is a report gauge used on homepages to display real-time data",
-        "B. A metric is a time measurement used to measure the effectiveness of SLAs",
+        "B. A metric is a time measurement used to report the effectiveness of workflows and SLAs",
         "C. A metric is used to measure and evaluate the effectiveness of IT service management processes",
         "D. A metric is a comparative measurement used to report the effectiveness of flows and SLAs"
       ],
@@ -393,7 +382,7 @@
       "type": "multiple_choice",
       "options": [
         "A. The Default Value field in the Catalog Item form",
-        "B. RTIM (Number) > REQ (Number) > TASK (Number)",
+        "B. The Sequence filed in the Catalog Item form",
         "C. The Order field in the Variable form",
         "D. The Choice field in the Variable form"
       ],
@@ -403,12 +392,12 @@
       "text": "What is the path an Administrator could take to view the fulfillment stage task list for an order placed by a user?",
       "type": "multiple_choice",
       "options": [
-        "A. RTIM (Number) > REQ (Number) > TASK (Number)",
-        "B. REQ (Number) > RITM (Number) > TASK (Number)",
-        "C. REQ (Number) > PROCUREMENT (Number) > TASK (Number)",
-        "D. PROCUREMENT (Number) > REQ (Number) > TASK (Number)"
+        "A. RTIM (Number) > REQ (Number) > PROCUREMENT (Number)",
+        "B. RITM (Number) > REQ (Number) > PROCUREMENT (Number)",
+        "C. REQ (Number) > RITM (Number) > TASK (Number)", 
+        "D. FULFILLMENT (Number) > RITM (Number) > TASK (Number)"
       ],
-      "correctAnswer": "B. REQ (Number) > RITM (Number) > TASK (Number)"
+      "correctAnswer": "C. REQ (Number) > RITM (Number) > TASK (Number)"
     },
     {
       "text": "Which term refers to application menus and modules which you may want to access quickly and often?",
@@ -426,22 +415,22 @@
       "type": "multiple_choice",
       "options": [
         "A. A change request",
-        "B. A request",
+        "B. An Order Guide",
         "C. An SLA",
-        "D. A task"
+        "D. A request"
       ],
-      "correctAnswer": "B. A request"
+      "correctAnswer": "D. A request"
     },
     {
       "text": "Which one of the following statements applies to a set of fields when they are coalesced during an import?",
       "type": "multiple_choice",
       "options": [
         "A. If a match is found using the coalesce fields, the existing record is updated with the information being imported",
-        "B. If a match is not found using the coalesce fields, the system creates a new record",
-        "C. If a match is found using the coalesce fields, the existing record is not updated",
+        "B. If a match is not found using the coalesce fields, the system does not create a transform map",
+        "C. If a match is found using the coalesce fields, the system creates a new record",
         "D. If a match is not found using the coalesce fields, the existing record is updated with the information being imported"
       ],
-      "correctAnswer": "C. If a match is found using the coalesce fields, the existing record is not updated"
+      "correctAnswer": "A. If a match is found using the coalesce fields, the existing record is updated with the information being imported"
     },
     {
       "text": "As it relates to ServiceNow reporting, which of the following statements describes what a metric can do?",
@@ -459,11 +448,11 @@
       "type": "multiple_choice",
       "options": [
         "A. The Default Value field in the Catalog Item form",
-        "B. The Order field in the Variable form",
-        "C. The Choice field in the Variable form",
-        "D. (not visible / blank)"
+        "B. The Sequence field in the Catalog item form",
+        "C. The Order field in the Variable form",
+        "D. The Choice field in the Variable form"
       ],
-      "correctAnswer": "B. The Order field in the Variable form"
+      "correctAnswer": "C. The Order field in the Variable form"
     },
     {
       "text": "Which term refers to application menus and modules which you may want to access quickly and often?",
@@ -492,7 +481,7 @@
       "type": "multiple_choice",
       "options": [
         "A. A Trigger",
-        "B. A condition",
+        "B. Core Action",
         "C. A spoke",
         "D. An Event"
       ],
@@ -502,34 +491,34 @@
       "text": "For administrators creating new Service Catalog items, what is a characteristic they should know about Service Catalog variables?",
       "type": "multiple_choice",
       "options": [
-        "A. Service Catalog variables can only be used in Order Guides",
-        "B. Service Catalog variables cannot affect the order price",
-        "C. Service Catalog variables are global by default",
-        "D. (another option not fully visible)"
+        "A. Service Catalog variables can only be used in Record Producers",
+        "B. Service Catalog variables can only be used in Order Guides",
+        "C. Service Catalog variables cannot affect the order price",
+        "D. Service Catalog variables are global by default"
       ],
-      "correctAnswer": "A. Service Catalog variables can only be used in Order Guides"
+      "correctAnswer": "D. Service Catalog variables are global by default"
     },
     {
       "text": "Which one of the following statements is true about Column Context Menus?",
       "type": "multiple_choice",
       "options": [
-        "A. It displays actions such as exporting options, tags, and search",
-        "B. It displays actions related to filtering the entire list",
-        "C. It displays actions such as view form, view related task, and relationship",
-        "D. It displays actions like Mapping fields using a Field Map"
+        "A. It displays actions such as creating quick reports, configuring the list, and exporting data",
+        "B. It displays actions related to filtering options,assigning tags, and search",
+        "C. It displays actions related to viewing and filtering the entire list",
+        "D. It displays actions such as view form, view related task, and add relationship"
       ],
-      "correctAnswer": "B. It displays actions related to filtering the entire list"
+      "correctAnswer": "B. It displays actions related to filtering options,assigning tags, and search"
     },
     {
       "text": "When using the Load Data and Transform Map process, what is the Mapping Assist used for?",
       "type": "multiple_choice",
       "options": [
         "A. Mapping fields using the Import Log",
-        "B. Mapping fields using CMDB contains the … (cut off)",
+        "B. Mapping fields using Transform History",
         "C. Mapping fields using an SLA",
         "D. Mapping fields using a Field Map"
       ],
-      "correctAnswer": "A. Mapping fields using the Import Log"
+      "correctAnswer": "D. Mapping fields using a Field Map"
     },
     {
       "text": "Which one of the following statements describes the contents of the Configuration Management Database (CMDB)?",
@@ -562,7 +551,7 @@
         "C. Extended Tables",
         "D. Custom Tables"
       ],
-      "correctAnswer": "C. Extended Tables"
+      "correctAnswer": "A. Base Tables"
     },
     {
       "text": "Which of the following statement describes the purpose of an Order Guide?",
@@ -591,7 +580,7 @@
       "type": "multiple_choice",
       "options": [
         "A. Table-Walking",
-        "B. Sys ID Pulling",
+        "B. Sys_ID Pulling",
         "C. Dot-Walking",
         "D. Record-Hopping"
       ],
@@ -602,14 +591,11 @@
       "type": "multiple_choice",
       "options": [
         "A. A schema map enables administrators to define records from specific tables as trouble sources for Configuration Items",
-        "B. A schema map graphically organizes the database",
-        "C. A schema map graphically organizes the CMDB",
-        "D. A schema map graphically displays the Configuration Items that support a business service",
-        "E. A schema map displays the details of tables and their relationships in a visual manner, allowing administrators to view and easily access different parts of the database schema"
+        "B. A schema map graphically organizes the CMDB",
+        "C. A schema map graphically displays the Configuration Items that support a business service",
+        "D. A schema map displays the details of tables and their relationships in a visual manner, allowing administrators to view and easily access different parts of the database schema"
       ],
-      "correctAnswer": "D, E and one additional option not fully visible in this crop",
-      "multipleCorrect": true,
-      "note": "This is a multi-select question where 3 options should be selected. The correct choices appear to include D, E, and one more option not visible in the screenshot."
+      "correctAnswer": "D. A schema map displays the details of tables and their relationships in a visual manner, allowing administrators to view and easily access different parts of the database schema"
     },
     {
       "text": "Which one of the following statements best describes the purpose of an Update Set?",
@@ -698,7 +684,7 @@
         "C. Access Control Rules",
         "D. Assignment Rules"
       ],
-      "correctAnswer": "C. Access Control Rules"
+      "correctAnswer": "B. Roles"
     },
     {
       "text": "What is a Record Producer?",
@@ -718,43 +704,27 @@
         "A. They direct the user to a record producer",
         "B. They direct the user to a catalog property",
         "C. They direct the user to a catalog UI policy",
-        "D. They direct the user to a catalog client script",
-        "E. They direct the user to ... (text cut off)",
-        "F. They direct the user to ... (text cut off)",
-        "G. They direct the user to ... (text cut off)",
-        "H. They direct the user to ... (text cut off)"
-      ],
-      "correctAnswer": "A. They direct the user to a record producer",
-      "note": "Options E-H are incomplete in the screenshot. Based on ServiceNow knowledge, 'record producer' is the correct answer for Incident, Password Reset, and Report Outage services."
-    },
-    {
-      "text": "Create Incident, Password Reset, and Report outage: what do these services in the Service Catalog have in common?",
-      "type": "multiple_choice",
-      "options": [
-        "A. They direct the user to a record producer",
-        "B. They direct the user to a catalog property",
-        "C. They direct the user to a catalog UI policy",
         "D. They direct the user to a catalog client script"
       ],
-      "correctAnswer": "C. They direct the user to a catalog UI policy"
+      "correctAnswer": "A. They direct the user to a record producer"
     },
     {
       "text": "What is the Import Set Table?",
       "type": "multiple_choice",
       "options": [
         "A. A table where data will be placed, post-transformation",
-        "B. A table that determines catalog UI policy",
+        "B. A table that determines relationships",
         "C. A staging area for imported records",
         "D. A repository for Update Set information"
       ],
-      "correctAnswer": "B. A table that determines catalog UI policy"
+      "correctAnswer": "C. A staging area for imported records"
     },
     {
       "text": "What is a characteristic of importing data into ServiceNow?",
       "type": "multiple_choice",
       "options": [
         "A. An existing Transform Map can be used only one time on the same import set",
-        "B. Coalesce fields are used after running Transform Maps",
+        "B. Coalesce fields are used after running Transform",
         "C. Any user can manage and set up import sets",
         "D. An existing Transform Map can be used multiple times on the same import set"
       ],
@@ -780,18 +750,18 @@
         "C. List Editor",
         "D. Form Designer"
       ],
-      "correctAnswer": "C. List Editor"
+      "correctAnswer": "B. Edit Menu"
     },
     {
       "text": "Which three Variable Types can be added to a Service Catalog Item?",
       "type": "multiple_choice",
       "options": [
         "A. True/False, Multiple Choice, and Ordered List",
-        "B. Number List, Single Line Text, and Reference",
-        "C. Multiple Choice, Select Box, and Checkbox",
-        "D. (fourth option not fully visible)"
+        "B. True/False, Checkbox and Number List",
+        "C. Number List, Single Line Text, and Reference",
+        "D. Multiple Choice, Select Box, and Checkbox"
       ],
-      "correctAnswer": "C. Multiple Choice, Select Box, and Checkbox"
+      "correctAnswer": "D. Multiple Choice, Select Box, and Checkbox"
     },
     {
       "text": "How are Workflows moved between instances?",
@@ -820,7 +790,7 @@
       "type": "multiple_choice",
       "options": [
         "A. The new table inherits all of the Business Rules, Client Scripts, and UI Policies of the parent table, but none of the existing fields",
-        "B. The new table archive assumes its roles in the database",
+        "B. The new table archive parent table and assumed its roles in the database",
         "C. The new table inherits all of the fields of the parent table and can also contain new fields unique to itself",
         "D. The new table inherits all of the fields, but does not inherit Access Control rules, Client Scripts, and UI Policies of the parent table"
       ],
@@ -874,7 +844,7 @@
       "text": "Which one of the following statements describes the purpose of a Service Catalog flow?",
       "type": "multiple_choice",
       "options": [
-        "A. A Service Catalog flow generates three basic components: item variable types, tasks, and notifications",
+        "A. A Service Catalog flow generates three basic components: item variable types, tasks, and approvals",
         "B. Although a Service Catalog flow cannot send notifications, the flow drives complex fulfillment processes",
         "C. A Service Catalog flow is used to drive complex fulfillment processes and sends notifications to defined users or groups",
         "D. A Service Catalog flow generates three basic components: item variable types, tasks, and notifications"
@@ -912,7 +882,7 @@
         "C. Service Portal > Widgets",
         "D. Incident > Assigned to me"
       ],
-      "correctAnswer": "C. Service Portal > Widgets"
+      "correctAnswer": "D. Incident > Assigned to me"
     },
     {
       "text": "Which of the following is used to categorize, flag, and locate records?",
@@ -923,7 +893,7 @@
         "C. Tags",
         "D. Bookmarks"
       ],
-      "correctAnswer": "B. Favorites"
+      "correctAnswer": "C. Tags"
     },
     {
       "text": "Which tool should be used to populate commonly used fields in a form?",
@@ -945,7 +915,7 @@
         "C. A group defines a set of users that share the same location",
         "D. A group defines a set of users that share the same job title"
       ],
-      "correctAnswer": "C. A group defines a set of users that share the same location"
+      "correctAnswer": "B. A group is one record stored in the Group [sys_user_group] table"
     },
     {
       "text": "What is a role in ServiceNow?",
@@ -964,7 +934,7 @@
       "options": [
         "A. A tool for alerting users that events that concern them have occurred",
         "B. A message through Connect related to a Change Request",
-        "C. An article created by Business Rule",
+        "C. A new Knowledge article created by Business Rule",
         "D. An email file attachment"
       ],
       "correctAnswer": "A. A tool for alerting users that events that concern them have occurred"
@@ -989,19 +959,8 @@
         "C. Event",
         "D. Task"
       ],
-      "correctAnswer": "D. Task",
-      "note": "Options for this question were not fully visible in the screenshot. Based on ServiceNow terminology, 'Task' is the correct answer."
-    },
-    {
-      "text": "Which term best describes something that is created, has work performed upon it, and is eventually moved to a state of closed?",
-      "type": "multiple_choice",
-      "options": [
-        "A. report",
-        "B. flow",
-        "C. event",
-        "D. task"
-      ],
-      "correctAnswer": "D. task"
+      "correctAnswer": "D. Task"
+
     },
     {
       "text": "Which core table in the ServiceNow platform provides a series of standard fields used on each of the tables that extend it, such as the Incident [incident] and Problem [problem] tables?",
@@ -1037,7 +996,7 @@
       "correctAnswer": "A. Unique 32-character identifier that is assigned to every record"
     },
     {
-      "text": "When creating a global custom table named abc, what is the table name that is automatically assigned by the platform?",
+      "text": "When creating a global custom table named 'abc', what is the table name that is automatically assigned by the platform?",
       "type": "multiple_choice",
       "options": [
         "A. snc_abc",
@@ -1084,12 +1043,12 @@
       "text": "Which of the following steps can be used to import new data into ServiceNow from a spreadsheet?",
       "type": "multiple_choice",
       "options": [
-        "A. Select Data Source, Load Data, Create Transform Map, Run",
-        "B. Load Data, Create Transform Map, Run",
+        "A. Select Data Source, Schedule Transform",
+        "B. Load Data, Create Transform Map, Run Transform",
         "C. Define Data Source, Select Transform Map, Run Transform",
         "D. Select Import Set, Select Transform Map, Run Transform"
       ],
-      "correctAnswer": "B. Load Data, Create Transform Map, Run"
+      "correctAnswer": "B. Load Data, Create Transform Map, Run Transform"
     },
     {
       "text": "Which tool is used for creating dependencies between configuration items in the CMDB?",
@@ -1106,7 +1065,7 @@
       "text": "What is the difference between a UI Policy and Data Policy?",
       "type": "multiple_choice",
       "options": [
-        "A. Data Policies run when data is entered through the form, by an Import Set, or by web services; UI Policies are only for web services",
+        "A. Data Policies run when data is entered through the form, by an Import Set, or by web services; while UI Policies are set only by web services",
         "B. Data Policies can be converted into UI Policies, but UI Policies cannot be converted into Data Policies",
         "C. Data Policies run regardless of how data is entered into ServiceNow, while UI Policies are used for form interactions",
         "D. Data Policies run only after UI Policies run successfully"
@@ -1120,7 +1079,7 @@
         "A. Changes made to: tables, forms, Business Rules, and data records",
         "B. Changes made to: tables, forms, groups, and configuration items (CIs)",
         "C. Changes made to: tables, forms, views, and fields",
-        "D. Changes made to: table, forms, views, and fields"
+        "D. Changes made to: tables, forms, schedules, and client scripts"
       ],
       "correctAnswer": "D. Changes made to: table, forms, views, and fields"
     },
@@ -1128,7 +1087,7 @@
       "text": "What are the steps to retrieve an Update Set?",
       "type": "multiple_choice",
       "options": [
-        "A. Verify Update Set is Complete, Retrieve, Test Connection, Apply",
+        "A. Verify Update Set is Complete, Retrieve, Preview, Apply",
         "B. Verify Update Set is Complete, Test Connection, Apply",
         "C. Verify Update Set is Complete, Test Connection, Commit",
         "D. Verify Update Set is Complete, Retrieve, Preview, Commit"
@@ -1136,7 +1095,7 @@
       "correctAnswer": "D. Verify Update Set is Complete, Retrieve, Preview, Commit"
     },
     {
-      "text": "IntegrationHub enables execution of third-party APIs as a part of a flow. These integrations are referred to as what?",
+      "text": "IntegrationHub enables execution of third-party APIs as a part of a flow. These integrations are referred to as",
       "type": "multiple_choice",
       "options": [
         "A. an action",
@@ -1147,22 +1106,11 @@
       "correctAnswer": "B. a spoke"
     },
     {
-      "text": "Which one statement correctly describes Access Control evaluation?",
-      "type": "multiple_choice",
-      "options": [
-        "A. If more than one rule applies to a record, the older rule is evaluated",
-        "B. If a row level rule and a field level rule exist, both rules must be true before access is granted",
-        "C. The role with the most permissions evaluates the rule",
-        "D. (remainder off-screen in this image)"
-      ],
-      "correctAnswer": "B. If a row level rule and a field level rule exist, both rules must be true before access is granted"
-    },
-    {
       "text": "Which one statement correctly describes Access Control rule evaluation?",
       "type": "multiple_choice",
       "options": [
-        "A. Table access rules are evaluated from the most general to the specific",
-        "B. If more than one rule controls a row-level record, the older rule is evaluated first",
+        "A. Table access rules are evaluated from the general to the specific",
+        "B. If more than one rule applies to a record, the older rule is evaluated first",
         "C. If a row-level rule and a field-level rule exist, both rules must be true before an operation is allowed",
         "D. The role with the most permissions evaluates the rules first"
       ],
@@ -1177,86 +1125,91 @@
         "C. Access Control Rules",
         "D. Application Scope"
       ],
-      "correctAnswer": "C. Access Control Rules"
+      "correctAnswer": "D. Application Scope"
     },
     {
       "text": "Why is it recommended that you limit update sets to a maximum of 100 records?",
-      "type": "multiple_choice",
-      "multipleCorrect": true,
+      "type": "multi",
       "options": [
         "A. Comply with ISO audit requirements",
-        "B. Smaller update sets can reduce potential conflicts",
-        "C. Improve ability to troubleshoot issues with the default update set",
-        "D. Make it easier to identify and review changes"
+        "B. Smaller update sets can be imported to production during business hours",
+        "C. Reduce potential conflicts",
+        "D. Improve ability to troubleshoot issues with the default update set",
+        "E. Make it easier to identify and review changes",
+        "F. Keeps update set logs shorter"
       ],
-      "correctAnswer": "B. Smaller update sets can reduce potential conflicts, D. Make it easier to identify and review changes"
+      "correctAnswer": ["B. Smaller update sets can be imported to production during business hours","E. Make it easier to identify and review changes"]
     },
     {
       "text": "What attributes you can manage using system properties > basic configuration UI16?",
-      "type": "multiple_choice",
-      "multipleCorrect": true,
+      "type": "multi",
       "options": [
         "A. default region",
-        "B. default calendar",
-        "C. banner image",
-        "D. set logs shorter / default homepage (partially offscreen)"
+        "B. base theme",
+        "C. default calendar",
+        "D. banner image",
+        "E. module text colour",
+        "F. default homepage"
       ],
-      "correctAnswer": "B. default calendar, C. banner image, plus one more property from the offscreen option"
+      "correctAnswer": ["B. base theme","D. banner image"]
     },
     {
       "text": "A new employee joins the IT department and needs to perform work assigned to network and hardware groups. How would you set up their access? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. add user account to hardware group",
-        "B. base theme (irrelevant option)",
+        "B. Add user acount to ACL",
         "C. Create user account",
-        "D. add user account to IT knowledge base / network group / itil group (text split across columns)"
+        "D. add user account to IT knowledge base",
+        "E. add user account to network group",
+        "F. add user account to itil group"
       ],
-      "correctAnswer": "C. Create user account, A. add user account to hardware group, and add user account to appropriate assignment groups"
+      "correctAnswer": ["A. add user account to hardware group","C. Create user account","E. add user account to network group"]
     },
     {
       "text": "When using context menu on list, form, and column headings, what are the quick way to access the menus? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. Ctrl M",
         "B. click on context menu icon",
         "C. shift-click on the list, form, or column heading",
-        "D. right-click on the list, form, or column heading"
+        "D. right-click on the list, form, or column heading",
+        "E. double click on the list, form, or column heading"
       ],
-      "correctAnswer": "A. Ctrl+M, D. right-click on the list, form, or column heading"
+      "correctAnswer": ["B. click on context menu icon", "C. shift-click on the list, form, or column heading"]
     },
     {
       "text": "Tables can be characterised in multiple ways, which of this combination is impossible?",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
-        "A. parent and … (rest offscreen)",
-        "B. custom and core",
-        "C. customer and child",
-        "D. base and parent",
-        "E. core and base",
-        "F. parent and child"
+        "A. custom and core",
+        "B. customer and child",
+        "C. base and parent",
+        "D. core and base",
+        "E. parent and child"
       ],
-      "correctAnswer": "B. custom and core, F. parent and child"
+      "correctAnswer": ["A. custom and core","E. parent and child"]
     },
     {
       "text": "What are advantages of using Flow Designer? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. supports legacy workflows",
         "B. less manual scripting",
         "C. enables complicated scripting",
         "D. reduces technical debt",
-        "E. supports advanced developers"
+        "E. supports advanced developers",
+        "F. smooth integration with third-party systems"
       ],
-      "correctAnswer": "B. less manual scripting, D. reduces technical debt, E. supports advanced developers"
+      "correctAnswer": ["B. less manual scripting","D. reduces technical debt","F. smooth integration with third-party systems"]
     },
     {
       "text": "What are the different types of data sources, which may be imported into ServiceNow? (choose four)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. implementation spoke",
@@ -1266,36 +1219,36 @@
         "E. LDAP connection",
         "F. local sources (i.e., XML, CSV, excel)"
       ],
-      "correctAnswer": "B. JDBC connection, C. DataHub, E. LDAP connection, F. local sources"
+      "correctAnswer": ["B. JDBC connection","C. DataHub","F. local sources (i.e., XML, CSV, excel)"]
     },
     {
       "text": "What are the examples of UI actions relating to forms? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. form context menu",
-        "B. form links",
-        "C. form buttons",
-        "D. form muse"
+        "B. form columns",
+        "C. form links",
+        "D. form buttons",
+        "E. form muse"
       ],
-      "correctAnswer": "A. form context menu, B. form links, C. form buttons"
+      "correctAnswer": ["A. form context menu","C. form links","E. form muse"]
     },
     {
       "text": "What are the main components of the form design interface? (choose three)",
-      "type": "multiple_choice",
-      "multipleCorrect": true,
+      "type": "multi",
       "options": [
         "A. field picker",
         "B. field layout",
         "C. form layout",
         "D. page header",
-        "E. form navigator"
+        "E. field navigator"
       ],
-      "correctAnswer": "A. field picker, C. form layout, D. page header"
+      "correctAnswer": ["C. form layout","D. page header","E. field navigator"]
     },
     {
       "text": "When a custom table is created, which access control rules are automatically created? (choose four)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. update",
@@ -1305,11 +1258,11 @@
         "E. delete",
         "F. create"
       ],
-      "correctAnswer": "C. read, D. write, E. delete, F. create"
+      "correctAnswer": ["C. read", "D. write", "E. delete", "F. create"]
     },
     {
       "text": "What type of entities can receive task assignments, in ServiceNow? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. Groups",
@@ -1317,25 +1270,25 @@
         "C. Teams",
         "D. Users"
       ],
-      "correctAnswer": "A. Groups, D. Users"
+      "correctAnswer": ["A. Groups", "D. Users"]
     },
     {
       "text": "Which would you follow when testing a catalogue item that has a manager approval flow? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. make sure the latest flows are activated",
         "B. use the instance Incognito setting to quickly toggle between requester and approver",
         "C. use your admin account, so you can approve the items quickly",
         "D. impersonate the requester to ensure the form works",
-        "E. make sure the requester's user record has the specified manager",
+        "E. make sure the requester's user record as specified manager",
         "F. create and select your testing update set before starting the test cases"
       ],
-      "correctAnswer": "C. use your admin account, so you can approve the items quickly, D. impersonate the requester to ensure the form works, E. make sure the requester's user record has the specified manager"
+      "correctAnswer": ["C. use your admin account, so you can approve the items quickly", "D. impersonate the requester to ensure the form works", "E. make sure the requester's user record as specified manager"]
     },
     {
       "text": "When selecting the target table for an import, which table can you select? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. related tables, using dot-walk",
@@ -1344,50 +1297,49 @@
         "D. tables within the global scope",
         "E. tables which allow write access to other applications"
       ],
-      "correctAnswer": "C. tables within the existing application scope, D. tables within the global scope, E. tables which allow write access to other applications"
+      "correctAnswer": ["C. tables within the existing application scope","D. tables within the global scope", "E. tables which allow write access to other applications"]
     },
     {
       "text": "What are three security modules often used by the System Administrator? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. system security > security",
-        "B. system security > security settings",
+        "B. system properties > security",
         "C. system security > high security settings",
         "D. self-service > my access",
-        "E. system security > access control (ACL)",
-        "F. roles and permissions (wording truncated)"
+        "E. system security > access control (ACL)"
       ],
-      "correctAnswer": "B. system security > security settings, C. system security > high security settings, E. system security > access control (ACL)"
+      "correctAnswer": ["B. system properties > security","C. system security > high security settings", "E. system security > access control (ACL)"]
     },
     {
       "text": "When managing tags, you can adjust who is able to see it. What are the visibility options? (choose three)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. groups and users",
-        "B. company",
+        "B. everyone",
         "C. me",
         "D. admins",
-        "E. everyone"
+        "E. roles and permissions"
       ],
-      "correctAnswer": "A. groups and users, C. me, E. everyone"
+      "correctAnswer": ["A. groups and users", "B. everyone", "C. me"]
     },
     {
       "text": "Which modules can you use to create a new table? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. tables and columns",
-        "B. view tables",
+        "B. dictionary",
         "C. schema map",
-        "D. table hierarchy"
+        "D. tables"
       ],
-      "correctAnswer": "A. tables and columns, D. table hierarchy"
+      "correctAnswer": ["A. tables and columns","D. tables"]
     },
     {
       "text": "What are examples of UI Actions, relating to lists? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. list buttons",
@@ -1397,22 +1349,11 @@
         "E. list control",
         "F. lists overwrite"
       ],
-      "correctAnswer": "A. list buttons, B. list context menu, D. list links"
-    },
-    {
-      "text": "While showing a customer their incident form, they ask to quickly change the priority. Which UI Action would you demonstrate?",
-      "type": "multiple_choice",
-      "options": [
-        "A. right click on priority",
-        "B. right click on priority and … (truncated)",
-        "C. use list editor",
-        "D. use form header menu"
-      ],
-      "correctAnswer": "A. right click on priority"
+      "correctAnswer": ["A. list buttons", "B. list context menu", "C. list choices", "D. list links"]
     },
     {
       "text": "While showing a customer their incident form, they ask to change the priority field title to display their internal terminology 'Pvalue'. How would you do that? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
         "A. right click on priority and select configure label",
@@ -1420,19 +1361,269 @@
         "C. right click on priority and select configure dictionary",
         "D. right click on priority and select configure column"
       ],
-      "correctAnswer": "A. right click on priority and select configure label, B. right click on priority and select configure display settings"
+      "correctAnswer": ["A. right click on priority and select configure label","C. right click on priority and select configure dictionary"]
     },
     {
       "text": "An IT User calls the service desk because they need to work on task records. All they can see is their self-service on their homepage when they log into the service-now instance. What issue could explain this? (choose two)",
-      "type": "multiple_choice",
+      "type": "multi",
       "multipleCorrect": true,
       "options": [
-        "A. their user account does not belong to any group",
+        "A. their user account does not belong to any group which contains the ITIL role",
         "B. their user record was not approved by their managers",
         "C. their user account is not logged in properly",
         "D. their user account does not have itil role"
       ],
-      "correctAnswer": "A. their user account does not belong to any group, D. their user account does not have itil role"
-    }
+      "correctAnswer": ["A. their user account does not belong to any group which contains the ITIL role","D. their user account does not have itil role" ]
+    },
+    {
+    "text": "Reports can be created from which different places in the platform? (choose two)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. List column heading",
+      "B. Metrics module",
+      "C. Statistics module",
+      "D. View / Run module"
+    ],
+    "correctAnswer": [
+      "A. List column heading",
+      "D. View / Run module"
+    ]
+  },
+  {
+    "text": "Knowledge Base Search results can be sorted by which of the following? (choose three)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Most recent update",
+      "B. Popularity",
+      "C. Relevancy",
+      "D. Manager assignment",
+      "E. Number of views",
+      "F. Smooth integration with 3rd party systems"
+    ],
+    "correctAnswer": [
+      "A. Most recent update",
+      "B. Popularity",
+      "C. Relevancy"
+    ]
+  },
+  {
+    "text": "What is the path an Administrator could take to view the fulfillment stage task list for an order placed by a user? (choose four)",
+    "type": "multiple_choice",
+    "multipleCorrect": true,
+    "options": [
+      "A. RITM (Number) > REQ (Number) > PROCUREMENT (Number)",
+      "B. RITM (Number) > REQ (Number) > PROCUREMENT (Number)",
+      "C. REQ (Number) > RITM (Number) > TASK (Number)",
+      "D. FULFILLMENT (Number) > RITM (Number) > TASK (Number)"
+    ],
+    "correctAnswer": "C. REQ (Number) > RITM (Number) > TASK (Number)"
+  },
+  {
+    "text": "Which ServiceNow products can be used to discover and populate the CMDB? (choose four)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Discovery",
+      "B. IntegrationHub ETL",
+      "C. Finder",
+      "D. CMDB Plug-in",
+      "E. CMDB Integration Dashboard"
+    ],
+    "correctAnswer": [
+      "A. Discovery",
+      "B. IntegrationHub ETL"
+    ]
+  },
+{
+    "text": "Which of the following are a type of client scripts supported in ServiceNow? (choose four)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. onSubmit",
+      "B. onUpdate",
+      "C. onCellEdit",
+      "D. onLoad",
+      "E. onEdit",
+      "F. onChange",
+      "G. onSave"
+    ],
+    "correctAnswer": [
+      "A. onSubmit",
+      "C. onCellEdit",
+      "D. onLoad",
+      "F. onChange"
+    ]
+  },
+  {
+    "text": "Which of the following concepts are associated with the ServiceNow CMDB? (choose four)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Service Processes",
+      "B. User Permissions",
+      "C. Tables and Fields",
+      "D. A Database",
+      "E. The Dependency View"
+    ],
+    "correctAnswer": [
+      "A. Service Processes",
+      "C. Tables and Fields",
+      "D. A Database",
+      "E. The Dependency View"
+    ]
+  },
+  {
+    "text": "What is a formatter? Select one of the following.",
+    "type": "multiple_choice",
+    "multipleCorrect": false,
+    "options": [
+      "A. A formatter allows you to configure applications for an instance",
+      "B. A formatter is a form element used to display information that is not a field in the record",
+      "C. A formatter allows you to populate fields automatically",
+      "D. A formatter is a set of conditions applied to a table to help find and work with data"
+    ],
+    "correctAnswer": "B. A formatter is a form element used to display information that is not a field in the record"
+  },
+  {
+    "text": "When searching using the App Navigator search field, what can be returned? (choose four)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Names of Applications and Modules",
+      "B. Names of Modules",
+      "C. Name of Applications",
+      "D. Favorites",
+      "E. History Records",
+      "F. Titles of Dashboard Gauges"
+    ],
+    "correctAnswer": [
+      "A. Names of Applications and Modules",
+      "B. Names of Modules",
+      "C. Name of Applications",
+      "D. Favorites"
+    ]
+  },
+   {
+    "text": "Which of the following can be customized through the Basic Configuration UI 16 module? (choose three)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Banner Image",
+      "B. Record Number Format",
+      "C. Browser Tab Title",
+      "D. System Date Format",
+      "E. Form Header Size"
+    ],
+    "correctAnswer": [
+      "A. Banner Image",
+      "C. Browser Tab Title",
+      "E. Form Header Size"
+    ]
+  },
+    {
+    "text": "Which are valid ServiceNow User Authentication Methods? (choose three)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. XML feed",
+      "B. Local database",
+      "C. LDAP",
+      "D. SSO",
+      "E. FTP authentication"
+    ],
+    "correctAnswer": [
+      "B. Local database",
+      "C. LDAP",
+      "D. SSO"
+    ]
+  },
+   {
+    "text": "Access Control rules may be defined with which of the following permission requirements? (choose three)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Roles",
+      "B. Conditional Expressions",
+      "C. Assignment Rules",
+      "D. Scripts",
+      "E. User Criteria",
+      "F. Groups"
+    ],
+    "correctAnswer": [
+      "A. Roles",
+      "B. Conditional Expressions",
+      "D. Scripts"
+    ]
+  }, {
+    "text": "What is (are) best practice(s) regarding user/groups/roles? (choose two)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. You should never assign roles to groups",
+      "B. You should add users to groups",
+      "C. You should assign roles to groups",
+      "D. You should assign roles directly to users"
+    ],
+    "correctAnswer": [
+      "B. You should add users to groups",
+      "C. You should assign roles to groups"
+    ]
+  },{
+    "text": "What are two ways to generate an Event? (choose two)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Business Rule",
+      "B. Workflow",
+      "C. Log entry",
+      "D. Knowledge article publication"
+    ],
+    "correctAnswer": [
+      "A. Business Rule",
+      "B. Workflow"
+    ]
+  },
+  {
+    "text": "The ServiceNow platform includes which types of interfaces? (choose three)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Now Mobile Apps",
+      "B. Agent Control Center",
+      "C. Back Office Dashboard",
+      "D. Service Portals",
+      "E. Now Platform UI",
+      "F. Field Service Taskboard"
+    ],
+    "correctAnswer": [
+      "A. Now Mobile Apps",
+      "D. Service Portals",
+      "E. Now Platform UI"
+    ]
+  },{
+    "text": "Which of the following are not included in an Update Set, by default? (choose four)",
+    "type": "multi",
+    "multipleCorrect": true,
+    "options": [
+      "A. Homepages",
+      "B. Data",
+      "C. Published Workflows",
+      "D. Business Rules",
+      "E. Schedules",
+      "F. Database changes",
+      "G. Related Lists",
+      "H. Report Definitions",
+      "I. Scheduled Jobs",
+      "J. Client Scripts & Views"
+    ],
+    "correctAnswer": [
+      "A. Homepages",
+      "B. Data",
+      "E. Schedules",
+      "I. Scheduled Jobs"
+    ]
+  }
   ]
 }
