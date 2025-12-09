@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { RiQuestionnaireLine, RiHome3Line, RiRestartLine } from 'react-icons/ri';
-import questionsData from './questions.json'; // ✅ Using external questions.json
+import questionsData from './questions.json';
 
 const STORAGE_KEY = 'quiz_state_v1';
 
 function App() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [playerName, setPlayerName] = useState('');
-  const [quizType, setQuizType] = useState(null);
+  const [quizType, setQuizType] = useState(null); // 'true_false' | 'multiple_choice' | 'multi'
+  const [mode, setMode] = useState('type');       // 'type' | 'mcq-set' | 'msq-set' | 'quiz'
+  const [selectedMcqSet, setSelectedMcqSet] = useState(null); // 0..3
+  const [selectedMsqSet, setSelectedMsqSet] = useState(null); // 0..1
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
@@ -27,6 +30,9 @@ function App() {
         if (parsed) {
           setPlayerName(parsed.playerName ?? '');
           setQuizType(parsed.quizType ?? null);
+          setMode(parsed.mode ?? 'type');
+          setSelectedMcqSet(parsed.selectedMcqSet ?? null);
+          setSelectedMsqSet(parsed.selectedMsqSet ?? null);
           setCurrentQuestion(parsed.currentQuestion ?? 0);
           setShowResults(parsed.showResults ?? false);
           setScore(parsed.score ?? 0);
@@ -51,6 +57,9 @@ function App() {
     const stateToSave = {
       playerName,
       quizType,
+      mode,
+      selectedMcqSet,
+      selectedMsqSet,
       currentQuestion,
       showResults,
       score,
@@ -65,6 +74,9 @@ function App() {
     isHydrated,
     playerName,
     quizType,
+    mode,
+    selectedMcqSet,
+    selectedMsqSet,
     currentQuestion,
     showResults,
     score,
@@ -80,11 +92,66 @@ function App() {
   }
 
   const allQuestions = questionsData.questions;
-  const questions = quizType ? allQuestions.filter((q) => q.type === quizType) : [];
+
+  // MCQ sets from questions with type "multiplechoice" in JSON [file:1]
+  const getMcqSets = () => {
+    const mcqQuestions = allQuestions.filter((q) => q.type === 'multiple_choice');
+    const total = mcqQuestions.length;
+
+    const baseSize = Math.floor(total / 4);
+    const remainder = total % 4;
+
+    const sets = [];
+    let start = 0;
+    for (let i = 0; i < 4; i++) {
+      const size = baseSize + (i < remainder ? 1 : 0);
+      const end = start + size;
+      sets.push(mcqQuestions.slice(start, end));
+      start = end;
+    }
+    return sets;
+  };
+
+  const mcqSets = getMcqSets();
+
+  // MSQ sets from questions with type "multi" in JSON [file:1]
+  const getMsqSets = () => {
+    const msqQuestions = allQuestions.filter((q) => q.type === 'multi');
+    // explicitly split into 16 and the rest (e.g. 17 if total = 33)
+    const firstSize = 16;
+    const firstSet = msqQuestions.slice(0, firstSize);
+    const secondSet = msqQuestions.slice(firstSize);
+    return [firstSet, secondSet];
+  };
+
+  const msqSets = getMsqSets();
+
+  // Build current questions array
+  let questions = [];
+  if (quizType === 'true_false') {
+    // true/false in JSON is "truefalse" [file:1]
+    questions = allQuestions.filter((q) => q.type === 'true_false');
+  } else if (quizType === 'multiple_choice' && selectedMcqSet != null) {
+    questions = mcqSets[selectedMcqSet] || [];
+  } else if (quizType === 'multi' && selectedMsqSet != null) {
+    questions = msqSets[selectedMsqSet] || [];
+  }
 
   const totalQuestions = questions.length;
   const currentQ = questions[currentQuestion] || {};
   const isMultiSelect = currentQ.type === 'multi';
+
+  const resetQuizState = () => {
+    setCurrentQuestion(0);
+    setShowResults(false);
+    setScore(0);
+    setSelectedAnswers([]);
+    setShowFeedback(false);
+    setIsCorrect(false);
+    setAnsweredQuestions([]);
+    setTimeSpent(0);
+    setQuestionStartTime(Date.now());
+  };
 
   const handleAnswer = (answer) => {
     if (showFeedback) return;
@@ -116,7 +183,6 @@ function App() {
       setScore((prev) => prev + 1);
     }
 
-    // Track answered question with details
     const timeTaken = Math.floor((Date.now() - questionStartTime) / 1000);
     setTimeSpent((prev) => prev + timeTaken);
     setAnsweredQuestions((prev) => [
@@ -150,32 +216,27 @@ function App() {
   };
 
   const restartQuiz = () => {
-    setCurrentQuestion(0);
-    setShowResults(false);
-    setScore(0);
-    setSelectedAnswers([]);
-    setShowFeedback(false);
-    setAnsweredQuestions([]);
-    setTimeSpent(0);
-    setQuestionStartTime(Date.now());
+    resetQuizState();
   };
 
   const goHome = () => {
     setQuizType(null);
-    setCurrentQuestion(0);
-    setShowResults(false);
-    setScore(0);
-    setSelectedAnswers([]);
-    setShowFeedback(false);
-    setIsCorrect(false);
-    setAnsweredQuestions([]);
-    setTimeSpent(0);
+    setMode('type');
+    setSelectedMcqSet(null);
+    setSelectedMsqSet(null);
+    resetQuizState();
   };
 
   const readableQuizType = () => {
     if (quizType === 'true_false') return 'TF';
-    if (quizType === 'multiple_choice') return 'MCQ';
-    if (quizType === 'multi') return 'MSQ';
+    if (quizType === 'multiple_choice') {
+      if (selectedMcqSet != null) return `MCQ Set ${selectedMcqSet + 1}`;
+      return 'MCQ';
+    }
+    if (quizType === 'multi') {
+      if (selectedMsqSet != null) return `MSQ Set ${selectedMsqSet + 1}`;
+      return 'MSQ';
+    }
     return '';
   };
 
@@ -202,7 +263,7 @@ function App() {
   }
 
   // Step 2: select quiz type
-  if (!quizType) {
+  if (mode === 'type') {
     return (
       <div style={styles.container}>
         <div style={styles.quizCard}>
@@ -215,54 +276,131 @@ function App() {
               style={styles.nextBtn}
               onClick={() => {
                 setQuizType('true_false');
-                setCurrentQuestion(0);
-                setShowResults(false);
-                setScore(0);
-                setSelectedAnswers([]);
-                setShowFeedback(false);
-                setIsCorrect(false);
-                setAnsweredQuestions([]);
-                setTimeSpent(0);
-                setQuestionStartTime(Date.now());
+                setSelectedMcqSet(null);
+                setSelectedMsqSet(null);
+                setMode('quiz');
+                resetQuizState();
               }}
             >
               True / False
             </button>
+
             <button
               style={styles.nextBtn}
               onClick={() => {
                 setQuizType('multiple_choice');
-                setCurrentQuestion(0);
-                setShowResults(false);
-                setScore(0);
-                setSelectedAnswers([]);
-                setShowFeedback(false);
-                setIsCorrect(false);
-                setAnsweredQuestions([]);
-                setTimeSpent(0);
-                setQuestionStartTime(Date.now());
+                setSelectedMcqSet(null);
+                setSelectedMsqSet(null);
+                setMode('mcq-set');
+                resetQuizState();
               }}
             >
               MCQ
             </button>
+
             <button
               style={styles.nextBtn}
               onClick={() => {
                 setQuizType('multi');
-                setCurrentQuestion(0);
-                setShowResults(false);
-                setScore(0);
-                setSelectedAnswers([]);
-                setShowFeedback(false);
-                setIsCorrect(false);
-                setAnsweredQuestions([]);
-                setTimeSpent(0);
-                setQuestionStartTime(Date.now());
+                setSelectedMcqSet(null);
+                setSelectedMsqSet(null);
+                setMode('msq-set');
+                resetQuizState();
               }}
             >
               MSQ
             </button>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // MCQ set selection screen
+  if (mode === 'mcq-set') {
+    const totalMcq = mcqSets.reduce((sum, set) => sum + set.length, 0);
+    const setLabels = mcqSets.map((set, idx) => `MCQ Set ${idx + 1}`);
+
+    return (
+      <div style={styles.container}>
+        <div style={styles.quizCard}>
+          <h1 style={styles.resultsTitle}>MCQ Sets ({totalMcq} questions)</h1>
+          <p style={{ marginBottom: '20px', color: '#6c757d' }}>
+            Select a set to start the MCQ quiz.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {setLabels.map((label, idx) => (
+              <button
+                key={idx}
+                style={styles.nextBtn}
+                onClick={() => {
+                  setSelectedMcqSet(idx);
+                  setMode('quiz');
+                  resetQuizState();
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            style={{ ...styles.backBtn, marginTop: '16px' }}
+            onClick={() => {
+              setQuizType(null);
+              setSelectedMcqSet(null);
+              setMode('type');
+              resetQuizState();
+            }}
+          >
+            ← Back
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // MSQ set selection screen
+  if (mode === 'msq-set') {
+    const totalMsq = msqSets.reduce((sum, set) => sum + set.length, 0);
+    const setLabels = ['MSQ Set 1', 'MSQ Set 2'];
+
+    return (
+      <div style={styles.container}>
+        <div style={styles.quizCard}>
+          <h1 style={styles.resultsTitle}>MSQ Sets ({totalMsq} questions)</h1>
+          <p style={{ marginBottom: '20px', color: '#6c757d' }}>
+            Select a set to start the MSQ quiz.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {setLabels.map((label, idx) => (
+              <button
+                key={idx}
+                style={styles.nextBtn}
+                onClick={() => {
+                  setSelectedMsqSet(idx);
+                  setMode('quiz');
+                  resetQuizState();
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            style={{ ...styles.backBtn, marginTop: '16px' }}
+            onClick={() => {
+              setQuizType(null);
+              setSelectedMsqSet(null);
+              setMode('type');
+              resetQuizState();
+            }}
+          >
+            ← Back
+          </button>
         </div>
       </div>
     );
@@ -297,7 +435,6 @@ function App() {
           </div>
           <p style={styles.scorePercent}>{percentage}% Correct</p>
 
-          {/* Stats Section */}
           <div style={styles.statsContainer}>
             <div style={styles.statBox}>
               <div style={styles.statValue}>{formatTime(timeSpent)}</div>
@@ -313,7 +450,6 @@ function App() {
             </div>
           </div>
 
-          {/* Review Section */}
           {answeredQuestions.length > 0 && (
             <details style={styles.reviewSection}>
               <summary style={styles.reviewSummary}>📋 Review Answers</summary>
@@ -340,7 +476,7 @@ function App() {
                       {!q.isCorrect && (
                         <div style={styles.reviewAnswerRow}>
                           <span style={styles.answerLabel}>Correct:</span>
-                          <span style={{...styles.answerValue, color: '#16a34a'}}>
+                          <span style={{ ...styles.answerValue, color: '#16a34a' }}>
                             {Array.isArray(q.correctAnswer)
                               ? q.correctAnswer.join(', ')
                               : q.correctAnswer}
@@ -354,7 +490,14 @@ function App() {
             </details>
           )}
 
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginTop: '20px' }}>
+          <div
+            style={{
+              display: 'flex',
+              gap: '12px',
+              justifyContent: 'center',
+              marginTop: '20px',
+            }}
+          >
             <button style={styles.restartBtn} onClick={restartQuiz}>
               <RiRestartLine style={{ marginRight: 6 }} />
               Restart Same Quiz
@@ -516,7 +659,7 @@ function App() {
   );
 }
 
-// All styles remain exactly the same as before
+// styles same as your version
 const styles = {
   container: {
     minHeight: '100vh',
